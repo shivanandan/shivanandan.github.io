@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Write me a letter</title>
+  <link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var c = url.searchParams.get("name");
+  console.log(c);
+  
+
+  </script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="envelope new">
+  <div class="front">
+    <div class="stamp"></div>
+    <div class="mailme" >
+      <p id="nametxt">Dear ..</p>
+    </div>
+  </div>
+  <div class="back">
+    <div class="letter">
+
+      <div class="mailme" >
+      <p id="nametxt">Dear ..</p>
+    </div>
+      <div style="text-align: center;">
+        <p> Cordially solicit your gracious presence with family and friends</p>
+        <p> On the auspicious occasion of the wedding of</p>
+        <p style="font-size: 2em;margin: 2px;"> S.Jagadish with S.L. Gayathri</p>
+        <p> On Sunday 1st December 2019 between 8.00am and 9.30am at </p> 
+        <p>Selma thiumana mandapam, Kotagiri, The Nilgiris</p>
+        <p> With Best Compliments from Relatives & Friends</p>
+      </div>
+      <form class="mailform">
+        <!-- <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" size="40" placeholder="Name">
+        </div>
+        <div>
+          <label for="emailadress">Email adress</label>
+          <input type="text" name="emailadress" size="40" placeholder="Email adress">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea name="message" cols="40" rows="5" placeholder="Message"></textarea>
+        </div> -->
+        <div>          
+          <input type="submit" value="RSVP">
+        </div>
+      </form>
+    </div>
+    <div class="flap left-flap"></div>
+    <div class="flap right-flap"></div>
+    <div class="flap bottom-flap"></div>
+    <div class="flap top-flap"></div>
+  </div>
+</div>
+<div class="notification">
+    <div>
+      <div>
+        <p>Thank you!</p>
+        <p>You are invited</p>
+      </div>
+    </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js">
+
+  </script>
+
+  <script> 
+    $(document).ready(function() { 
+      var first = getUrlVars()["name"];
+      alert(first);
+        
+            if (first.length != 0 ){
+          $(".mailme").html("<h3>Dear "+ first +"</h3>"); 
+        }
+           
+
+
+            function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+    });
+return vars;
+}
+        });
+  
+  
+</script> 
+  
+
+</body>
+</html>
